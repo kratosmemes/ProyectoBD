@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Administracion de usuarios</title>
+  </head>
+
+  <script>
+    function form(form){
+      if(form.Adress.value==""){
+        alert("Debes introducir una Direccion");
+        form.Adress.focus();
+        return false;
+      }
+      if(form.City.value==""){
+        alert("Debes introducir una Ciudad");
+        form.City.focus();
+        return false;
+      }
+      if(form.Country.value==""){
+        alert("Debes introducir un Continente");
+        form.Country.focus();
+        return false;
+      }
+      if(form.District.value==""){
+        alert("Debes introducir un Continente");
+        form.District.focus();
+        return false;
+      }
+      if(form.FirstName.value==""){
+        alert("Debes introducir un nombre");
+        form.FirstName.focus();
+        return false;
+      }
+      if(form.LastName.value==""){
+        alert("Debes introducir tus apellidos");
+        form.LastName.focus();
+        return false;
+      }
+      
+    return true;
+  }
+  </script>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+     <li class="nav-item">
+       <a class="nav-link" href="/altas">Dar alta Cliente</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="/consultas">Lista de Clientes</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="/propiedades/all">Propiedades</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="/altasrentas">Renta de propiedades</a>
+     </li>
+   </ul>
+ </nav>
+  <br>
+  
+  <h1>Alta de Clientes</h1>
+
+<form class="form-group mb-2" action="/add" onsubmit="return form(this)" method="POST" name="formulario">
+<input type=text class="form-control" name="Adress" placeholder="Direccion"></input><br>
+<input type=text class="form-control" name="City" placeholder="Ciudad"></input><br>
+<input type=text class="form-control" name="Country" placeholder="Pais"></input><br>
+<input type=text class="form-control" name="District" placeholder="Distrito"></input><br>
+<input type=text class="form-control" name="FirstName" placeholder="Nombre"></input><br>
+<input type=text class="form-control" name="LastName" placeholder="Apellidos"></input><br>
+<button class="btn btn-primary mb-2" type="submit">Agregar</button>
+</form>
+</body>
+</html>

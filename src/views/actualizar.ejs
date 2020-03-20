@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CRUD</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<br>
+<body>
+    <div class="form-group mx-sm-3 mb-2">
+        <form action="/editar/<%= customers._id%>" method="POST">
+        <label class="col-sm-2 col-form-label h5">Direccion</label>
+        <input type=text class="form-control" name="Adress"value="<%= customers.Adress%>">
+        <label class="col-sm-2 col-form-label h6">Ciudad</label>
+        <input type=text class="form-control" name="City" value="<%= customers.City%>">
+        <label class="col-sm-2 col-form-label h6">Continente</label>
+        <input type=text class="form-control" name="Country" value="<%= customers.Country%>">
+        <label class="col-sm-2 col-form-label h6">Distrito</label>
+        <input type=text class="form-control" name="District"  value="<%= customers.District%>">
+        <label class="col-sm-2 col-form-label h6">Nombre</label>
+        <input type=text class="form-control" name="FirstName"  value="<%= customers.FirstName%>">
+        <label class="col-sm-2 col-form-label h6">Apellidos</label>
+        <input type=text class="form-control" name="LastName"  value="<%= customers.LastName%>">
+       
+       
+       
+       
+       
+       
+        <button class="btn btn btn-success mb-2" type="submit">Actualizar</button>
+        <a href="/consultas" class="btn btn btn-danger mb-2" type="submit">Cancelar</a>    
+        </form>
+    </div>
+</body>

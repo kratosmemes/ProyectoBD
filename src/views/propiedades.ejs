@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Administracion de usuarios</title>
+  </head>
+
+  <script>
+    function form(form){
+      if(form.Adress.value==""){
+        alert("Debes introducir una Direccion");
+        form.Adress.focus();
+        return false;
+      }
+      if(form.City.value==""){
+        alert("Debes introducir una Ciudad");
+        form.City.focus();
+        return false;
+      }
+      if(form.Country.value==""){
+        alert("Debes introducir un Continente");
+        form.Country.focus();
+        return false;
+      }
+      if(form.District.value==""){
+        alert("Debes introducir un Continente");
+        form.District.focus();
+        return false;
+      }
+      if(form.FirstName.value==""){
+        alert("Debes introducir un nombre");
+        form.FirstName.focus();
+        return false;
+      }
+      if(form.LastName.value==""){
+        alert("Debes introducir tus apellidos");
+        form.LastName.focus();
+        return false;
+      }
+      
+    return true;
+  }
+  </script>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/altas">Dar alta Cliente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/consultas">Lista de Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/propiedades/all">Propiedades</a>
+      </li>
+    </ul>
+  
+  </nav>
+
+
+  
+  <div class=" ml-4">
+  <h3>Filtrar Por..</h1>
+ <h5>Tipo de propiedad</h5>
+  <a href="/propiedades/House"  class="btn btn-primary mb-2">Casas</a>
+  <a href="/propiedades/Apartment"  class="btn btn-primary mb-2">Departamentos</a>
+  <a href="/propiedades/Condominium"  class="btn btn-primary mb-2">Condominios</a>
+  <a href="/propiedades/Loft" class="btn btn-primary mb-2">Desavan</a>
+    </div>
+
+<div class=" ml-4">
+       <h5>Precio</h5>
+        <a href="/propiedadeslt/"  class="btn btn-primary mb-2">Menos de 1000</a>
+        <a href="/propiedadesmid/"  class="btn btn-primary mb-2">Entre 1000 y 4000</a>
+        <a href="/propiedadesgt/"  class="btn btn-primary mb-2">Mas de 4000</a>
+          </div>
+
+  <br>
+<% for(var i=0;i<=10;i++){ %> 
+    <div class="card row ml-1" style="border-radius: 32px;">
+        
+        <div class="card-body  bg-light ">
+          <h5 class="card-title">Tipo: <%=propiedades[i].property_type %></h5>
+          <label style="font-size: 20px;">Nombre:</label>
+          <p class="card-text"><%=propiedades[i].name %> </p>
+          <label style="font-size: 20px;">Descripcion:</label>
+          <p class="card-text"><%=propiedades[i].summary %></p>
+          <label style="font-size: 20px;">Habitaciones:</label>
+          <p class="card-text"><%=propiedades[i].bedrooms %></p>
+          <label style="font-size: 20px;">Baños:</label>
+          <p class="card-text"><%=propiedades[i].bathrooms%></p>
+          <label style="font-size: 20px;">Amenidades:</label>
+          <p class="card-text"><%=propiedades[i].amenities %></p>
+          <label style="font-size: 20px;">Precio:</label>
+          <p class="card-text"><%=propiedades[i].price%> USD</p>
+         
+        </div>
+      </div>
+      <br>
+<% } %> 
+
+  </body>
+</html>
